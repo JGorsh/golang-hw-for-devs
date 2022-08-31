@@ -26,7 +26,7 @@ func Unpack(s string) (string, error) {
 			if ch != 0 {
 				sb.WriteString(strings.Repeat(prev, ch-1))
 			} else {
-				var pr = sb.String()
+				pr := sb.String()
 				pr = pr[:len(pr)-1]
 				sb.Reset()
 				sb.WriteString(pr)
