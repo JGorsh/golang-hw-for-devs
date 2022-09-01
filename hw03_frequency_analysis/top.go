@@ -22,7 +22,7 @@ func Top10(str string) []string {
 
 		for _, val := range s {
 			if pr == val {
-				cach[val] += 1
+				cach[val]++
 			} else {
 				cach[val] = 1
 			}
