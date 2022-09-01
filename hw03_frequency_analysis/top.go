@@ -8,13 +8,13 @@ import (
 func Top10(str string) []string {
 	var st []string
 	var pr string
-	var cach = make(map[string]int)
-	var valpr = 0
+	cach := make(map[string]int)
+	valpr := 0
 
 	if str == "" {
 		return st
 	} else {
-		var s = strings.Fields(str)
+		s := strings.Fields(str)
 
 		sort.Slice(s, func(i, j int) bool {
 			return s[i] < s[j]
