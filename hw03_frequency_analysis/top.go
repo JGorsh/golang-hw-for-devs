@@ -9,6 +9,7 @@ func Top10(str string) []string {
 	var st []string
 	var pr string
 	var cach = make(map[string]int)
+	var valpr = 0
 
 	if str == "" {
 		return st
@@ -28,7 +29,6 @@ func Top10(str string) []string {
 			pr = val
 		}
 
-		var valpr = 0
 		for _, val := range cach {
 			if val > valpr {
 				valpr = val
