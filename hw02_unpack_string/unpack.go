@@ -13,6 +13,9 @@ func Unpack(s string) (string, error) {
 	var prev string
 	var j int
 
+	if s == "" {
+		return "", nil
+	}
 	for i, val := range s {
 		if ch, err := strconv.Atoi(string(val)); err != nil {
 			sb.WriteString(string(val))

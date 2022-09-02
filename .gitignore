@@ -24,6 +24,7 @@ go-telnet
 ._*
 .Spotlight-V100
 .Trashes
+/bin
 ehthumbs.db
 Thumbs.db
 .vscode/
