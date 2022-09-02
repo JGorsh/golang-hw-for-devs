@@ -27,4 +27,5 @@ go-telnet
 ehthumbs.db
 Thumbs.db
 .vscode/
+/bin
 *.bak
