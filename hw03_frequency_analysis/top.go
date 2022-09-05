@@ -11,7 +11,7 @@ type keyValue struct {
 }
 
 func Top10(str string) []string {
-	var st []string
+	st := make([]string, 0, 100)
 	var pr string
 	cach := make(map[string]int)
 	valpr := 0
