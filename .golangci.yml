@@ -1,58 +1,75 @@
 run:
-  concerrency: 8
-  timeout: 10s
-  issues-exit-code: 1
   tests: true
-  skip-dirs:
-    - bin
-    - tmp
-    - vendor.protogen
-  skip-files:
-    - \.pb\.go$
-    - \.pb\.gw\.go$
-
-output:
-  format: colored-line-number
-  print-issued-lines: true
-  print-linter-name: true
+  build-tags:
+    - bench
+    - !bench
 
 linters-settings:
-  govet:
-    check-shadowing: true
-  dupl:
-    threshold: 100
-  goconst:
-    min-len:          2
-    min-occurrences:  2
   funlen:
     lines: 150
     statements: 80
 
+issues:
+  exclude-rules:
+    - path: _test\.go
+      linters:
+        - errcheck
+        - dupl
+        - gocyclo
+        - gosec
+
 linters:
   disable-all: true
   enable:
-    - errcheck
+    - asciicheck
+    - bodyclose
+    - deadcode
+    - depguard
+    - dogsled
+    - dupl
+    - durationcheck
+    - errorlint
+    - exhaustive
+    - exportloopref
+    - funlen
+    - gci
+    - gocognit
     - goconst
+    - gocritic
+    - gocyclo
+    - godot
+    - gofmt
+    - gofumpt
+    - goheader
+    - goprintffuncname
     - gosec
+    - gosimple
     - govet
+    - ifshort
+    - importas
     - ineffassign
-    - unused
-    - megacheck # - (staticcheck + gosimple + unused in one linter) - enable before push
-    #    - revive
+    - lll
+    - makezero
+    - misspell
+    - nestif
+    - nilerr
+    - noctx
+    - nolintlint
+    - prealloc
+    - predeclared
+    - revive
+    - rowserrcheck
+    - sqlclosecheck
+    - staticcheck
+    - structcheck
+    - stylecheck
+    - tagliatelle
+    - thelper
     - typecheck
-    - unused # will be used instead of varcheck + deadcode + structcheck. More info https://github.com/golangci/golangci-lint/issues/1841
-
-issues:
-  exclude-use-default: false
-  exclude:
-    #   instead of err checks
-    - G104
-    #    for *public interface + private struct implementation case only
-    - exported func .* returns unexported type .*, which can be annoying to use
-    - should have a package comment, unless it's in another file for this package
-    - don't use an underscore in package name
-    - should check returned error before deferring
-    #    EXC001 errcheck: Almost all programs ignore errors on these functions and in most cases it's ok
-    - Error returns value of .((os\.)?std(out|err)\..*|.*Close|.*Flush|os\.Remove(All)?|.*print(f|ln)?|os\.(Un)?Setenv). is not checked
-    - should check returned error before deferring
+    - unconvert
+    - unparam
+    - unused
+    - varcheck
+    - wastedassign
+    - whitespace
 
