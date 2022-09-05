@@ -15,6 +15,7 @@ func Top10(str string) []string {
 	var pr string
 	cach := make(map[string]int)
 	valpr := 0
+	var sortedStruct []keyValue
 
 	if str == "" {
 		return st
@@ -39,8 +40,6 @@ func Top10(str string) []string {
 			valpr = val
 		}
 	}
-
-	var sortedStruct []keyValue
 
 	for key, value := range cach {
 		sortedStruct = append(sortedStruct, keyValue{key, value})
