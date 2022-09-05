@@ -5,7 +5,6 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-
 	"github.com/stretchr/testify/require"
 )
 
@@ -87,8 +86,8 @@ func TestTop10(t *testing.T) {
 func TestTopEmptyString(t *testing.T) {
 	input := ""
 	var expected []string
-	result := Top10(input)
 
+	result := Top10(input)
 	assert.Equal(t, expected, result)
 }
 
@@ -105,6 +104,5 @@ func TestTopRangeMassive(t *testing.T) {
 	}
 
 	result := Top10(input)
-
 	assert.Equal(t, expected, result, fmt.Sprintf("result len %d", len(result)))
 }
