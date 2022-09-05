@@ -50,7 +50,6 @@ func Top10(str string) []string {
 			return sortedStruct[i].Key < sortedStruct[j].Key
 		}
 		return sortedStruct[i].Value > sortedStruct[j].Value
-
 	})
 
 	if len(sortedStruct) < 10 {
@@ -59,6 +58,7 @@ func Top10(str string) []string {
 		}
 		return st
 	}
+
 	for i := 0; i < 10; i++ {
 		st = append(st, sortedStruct[i].Key)
 	}
