@@ -54,7 +54,6 @@ func Top10(str string) []string {
 
 	})
 
-	st = make([]string, len(sortedStruct))
 	if len(sortedStruct) < 10 {
 		for i := 0; i < len(sortedStruct); i++ {
 			st = append(st, sortedStruct[i].Key)
