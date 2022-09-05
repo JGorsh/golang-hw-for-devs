@@ -11,7 +11,7 @@ type keyValue struct {
 }
 
 func Top10(str string) []string {
-	st := make([]string, 0, 100)
+	var st []string
 	var pr string
 	cach := make(map[string]int)
 	valpr := 0
@@ -54,6 +54,7 @@ func Top10(str string) []string {
 
 	})
 
+	st = make([]string, len(sortedStruct))
 	if len(sortedStruct) < 10 {
 		for i := 0; i < len(sortedStruct); i++ {
 			st = append(st, sortedStruct[i].Key)
