@@ -48,10 +48,8 @@ func TestUnpackInvalidString(t *testing.T) {
 }
 
 func TestUnpackEmptyString(t *testing.T) {
-
 	input := ""
 	expected := ""
-
 	result, _ := Unpack(input)
 	assert.Equal(t, expected, result, fmt.Sprintf("Incorrect result. Expect %s, got %s", expected, result))
 }
