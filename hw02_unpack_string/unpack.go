@@ -17,6 +17,7 @@ func Unpack(s string) (string, error) {
 		return "", nil
 	}
 	for i, val := range s {
+
 		if ch, err := strconv.Atoi(string(val)); err != nil {
 			sb.WriteString(string(val))
 			prev = string(s[i])

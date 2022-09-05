@@ -2,7 +2,10 @@ package hw02unpackstring
 
 import (
 	"errors"
+	"fmt"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 
 	"github.com/stretchr/testify/require"
 )
@@ -42,4 +45,13 @@ func TestUnpackInvalidString(t *testing.T) {
 			require.Truef(t, errors.Is(err, ErrInvalidString), "actual error %q", err)
 		})
 	}
+}
+
+func TestUnpackEmptyString(t *testing.T) {
+
+	input := ""
+	expected := ""
+
+	result, _ := Unpack(input)
+	assert.Equal(t, expected, result, fmt.Sprintf("Incorrect result. Expect %s, got %s", expected, result))
 }
