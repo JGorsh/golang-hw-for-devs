@@ -49,3 +49,22 @@ func TestList(t *testing.T) {
 		require.Equal(t, []int{70, 80, 60, 40, 10, 30, 50}, elems)
 	})
 }
+
+func TestOnlyOneElement(t *testing.T) {
+	l := NewList()
+
+	elem := l.PushBack(42)
+	require.Equal(t, 1, l.Len())
+	require.Nil(t, elem.Prev)
+	require.Nil(t, elem.Next)
+
+	l.MoveToFront(elem)
+	require.Equal(t, 1, l.Len())
+	require.Nil(t, elem.Prev)
+	require.Nil(t, elem.Next)
+
+	l.Remove(elem)
+	require.Equal(t, 0, l.Len())
+	require.Nil(t, l.Front())
+	require.Nil(t, l.Back())
+}
